@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Som</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>IOT - Intensidade Sonora</h1>
+        <img src="/static/images/icone-animado.gif" alt="icone-animado" id="header-gif">
+    </header>
+    
+    <main>
+        <div class="box">
+            <h1>Status do Microfone</h1>
+            <p><strong>Nível Sonoro (dB):</strong> <span id="db-level">--</span></p>
+            <p><strong>Classificação:</strong> <span id="sound-level">--</span></p>
+        </div>
+        
+        <div class="box">
+            <h1>Ledbar Virtual</h1>
+            <div id="ledbar-container"></div>
+        </div>
+    </main>
+    
+    <footer>
+        <div>
+           <p>
+            Desenvolvido por <strong>Lincoln Matheus</strong>
+            <br>
+            2025. Todos os direitos reservados
+            </p> 
+        </div>
+        <div class="div-footer">
+            <figure>
+                <a href="https://github.com/LincolnMatheus97/iot-amostragem-mic.git" target="_blank" >
+                <img src="/static/images/repositorio.png" alt="gitHubProjeto" id="imagem-git">
+                </a>
+                <figcaption>Repositório Git do <em>Projeto</em>!</figcaption>
+            </figure>
+            <figure>
+                <a href="https://github.com/LincolnMatheus97" target="_blank" >
+                <img src="/static/images/git.png" alt="meuGit" id="imagem-git">
+                </a>
+                <figcaption>Meu Perfil no<em> GitHub</em>!</figcaption>
+            </figure>
+        </div>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
