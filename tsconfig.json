@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "es6",                     // Compila para uma versão moderna do JS
+    "module": "commonjs",                // Usa o sistema de módulos do Node.js
+    "rootDir": "./src",                  // Onde está nosso código-fonte TS
+    "outDir": "./build",                 // Onde o código JS compilado será salvo
+    "esModuleInterop": true,
+    "strict": true
+  }
+}
