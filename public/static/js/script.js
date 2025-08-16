@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- ELEMENTOS DA PÁGINA ---
     const dbLevelElement = document.getElementById("db-level");
     const soundLevelElement = document.getElementById("sound-level");
+    const stateLevelElement = document.getElementById("state-level")
     const ledbarContainer = document.getElementById("ledbar-container");
 
     // --- CONFIGURAÇÕES DA LEDBAR ---
@@ -31,6 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
         // Atualiza os textos
         dbLevelElement.textContent = niveldB.toFixed(2);
         soundLevelElement.textContent = nivelSom;
+
+        if (soundLevelElement.textContent == 'Baixo') {
+            stateLevelElement.textContent = 'Nivel Seguro!';
+        } else if (soundLevelElement.textContent == 'Moderado') {
+            stateLevelElement.textContent = 'Cuidado com o tempo!';
+        } else {
+            stateLevelElement.textContent = 'Nivel Prejudicial';
+        }
 
         // --- Lógica de atualização da Ledbar ---
         let ledsAcesos = 0;
@@ -74,13 +83,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         socket.onopen = () => {
             console.log("Conectado ao servidor WebSocket!");
-            soundLevelElement.textContent = "Conectado";
+            soundLevelElement.textContent = "--";
+            stateLevelElement.textContent = "--";
         };
 
         socket.onmessage = (event) => {
             try {
                 // A única tarefa aqui é guardar o dado mais recente.
-                // A renderização acontece no loopDeRenderizacao.
                 ultimoEstadoRecebido = JSON.parse(event.data);
             } catch (error) {
                 console.error("Erro ao processar a mensagem JSON:", error);
@@ -90,7 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
         socket.onclose = () => {
             console.log("Desconectado do servidor WebSocket. Tentando reconectar em 3 segundos...");
             dbLevelElement.textContent = "--";
-            soundLevelElement.textContent = "Reconectando...";
+            soundLevelElement.textContent = "--";
+            stateLevelElement.textContent = "--";
             setTimeout(conectarWebSocket, 3000);
         };
 
