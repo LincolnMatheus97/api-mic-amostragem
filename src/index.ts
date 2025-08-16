@@ -8,7 +8,7 @@ const app = express();
 const server = http.createServer(app);
 const wss = new WebSocketServer({ server });
 
-const PORT = process.env.PORT || 8080; // A porta está correta (8080)
+const PORT = process.env.PORT || 8080;
 
 // Configuração para servir a página HTML estática (para o browser)
 app.use(express.static(path.join(__dirname, '..', 'public')));
