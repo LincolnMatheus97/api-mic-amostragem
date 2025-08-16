@@ -16,7 +16,7 @@ body {
 
 header {
     min-height: 60px;
-    background-color: #448a46;
+    background-color: #107bcd;
     color: white;
     display: flex;
     align-items: center;
@@ -103,27 +103,26 @@ footer {
     margin-left: 10px;
 }
 
-/* --- ESTILOS DA LEDBAR --- */
 #ledbar-container {
     width: 80%;
     height: 40px;
     display: flex;
     border: 2px solid #333;
     border-radius: 5px;
-    overflow: hidden; /* Garante que os LEDs fiquem dentro da borda arredondada */
-    background-color: #ddd; /* Fundo cinza para LEDs apagados */
+    overflow: hidden;
+    background-color: #ddd;
 }
 
 .led {
-    flex-grow: 1; /* Faz cada LED ocupar o mesmo espaço */
+    flex-grow: 1;
     height: 100%;
-    background-color: transparent; /* Começa apagado */
-    border-left: 1px solid #ccc; /* Divisória sutil entre os LEDs */
-    transition: background-color 0.1s ease-out; /* Transição suave */
+    background-color: transparent;
+    border-left: 1px solid #ccc;
+    transition: background-color 0.1s ease-out;
 }
 
 .led:first-child {
-    border-left: none; /* Remove a borda do primeiro LED */
+    border-left: none;
 }
 
 /* Media Queries para responsividade */
