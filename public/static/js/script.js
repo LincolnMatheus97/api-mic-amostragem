@@ -83,6 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const socketUrl = `${protocol}//${window.location.host}`;
         console.log(`Conectando ao WebSocket em: ${socketUrl}`);
 
+        const socket = new WebSocket(socketUrl);
+
         socket.onopen = () => {
             console.log("Conectado ao servidor WebSocket!");
             soundLevelElement.textContent = "--";
