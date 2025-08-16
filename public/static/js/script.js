@@ -79,7 +79,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- CONEXÃO WEBSOCKET ---
     function conectarWebSocket() {
-        const socket = new WebSocket(`ws://${window.location.hostname}:8080`);
+        const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+        const socketUrl = `${protocol}//${window.location.host}`;
+        console.log(`Conectando ao WebSocket em: ${socketUrl}`);
 
         socket.onopen = () => {
             console.log("Conectado ao servidor WebSocket!");
