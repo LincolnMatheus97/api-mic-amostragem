@@ -86,6 +86,7 @@ O dashboard será carregado e tentará se conectar ao servidor WebSocket. Assim 
 
 O backend e o frontend estão organizados na seguinte estrutura de pastas:
 
+```
 /api-mic-amostragem
     ├── public/
     │ ├── static/
@@ -99,6 +100,7 @@ O backend e o frontend estão organizados na seguinte estrutura de pastas:
     │ └── index.ts # Código-fonte do servidor Node.js
     ├── package.json
     └── tsconfig.json
+```
 
 ## 5. Detalhes da API e Protocolo de Dados
 
